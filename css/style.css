@@ -1,0 +1,142 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+html , body{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body{
+	background: url(../img/bj.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+.showTxt{
+	opacity: 0;
+	z-index: 2;
+	position: absolute;
+	top: -100px;left: 0;
+	color: #000;
+	font-style: normal;
+	font-size: 16px;
+	font-weight: 700;
+}
+.showTxt.on{
+	-webkit-animation: showTxtAn .8s;
+	animation: showTxtAn .8s;
+}
+
+@-webkit-keyframes showTxtAn{
+	0%{opacity: 0;}
+	100%{
+		opacity: 1;
+		transform: translateY(-30px);
+	}
+}
+@keyframes showTxtAn{
+	0%{opacity: 0;}
+	100%{
+		opacity: 1;
+		transform: translateY(-30px);
+	}
+}
+
+.bonusList{
+	text-decoration: none;
+	position: absolute;
+	text-align: center;
+	padding-top: 25px;
+	z-index: 1;
+	background: url(../img/rdc.png) no-repeat center center;
+	background-size: cover;
+	width: 60px;
+	height: 60px;
+	transition: 4s ease-out;
+	top: -70px;
+}
+.bonusList.down{
+	top: 110%;
+}
+
+
+.timeoutBox{
+	background-color: rgba(248,232,121,1);
+	height: 5px;top: 0;left: 0;
+	position: fixed;z-index: 111;
+	width: 100%;
+	transition: 1s linear;
+}
+.createAlertInfo{
+	position: fixed;
+	z-index: 200;
+	top: 0;left: 0;width: 100%;height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	
+	display: flex;
+	align-items: center;
+	
+}
+.createAlertInfo .con{
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	z-index: 201;
+	width: 100%;
+	transition: 0.3s;
+	transform: scale(0.4);
+	opacity: 0;
+}
+
+.createAlertInfo .con.on{
+	transform: scale(1);
+	opacity: 1;
+}
+
+.createAlertInfo .con img{
+	width: 150px;
+}
+.createAlertInfo .con a{
+	background: #dc4637;
+	display: block;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 4px;
+	color: #fff;
+	margin: 15px auto;
+	text-decoration: none;
+}
+
+
+.readyTimeBox{
+	position: fixed;
+	z-index: 220;
+	top: 0;left: 0;width: 100%;height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 120px;
+	font-weight: 700;
+	font-family: "PingFang SC";
+}
+
+.readyTimeBox span{
+	position: absolute;
+	opacity: 0;
+	transform: scale(2.5);
+}
+.readyTimeBox span.on{
+	opacity: 1;
+	transform: scale(1);
+}
